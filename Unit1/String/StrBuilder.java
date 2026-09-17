@@ -1,7 +1,5 @@
 package Unit1.String;
 
-import javax.print.DocFlavor.CHAR_ARRAY;
-
 public class StrBuilder {
     public static void main(String[] args) {
         StringBuilder s = new StringBuilder("abcdefghijklmnopqrstuvwxyz");
