@@ -10,6 +10,44 @@ public class Test {
         swap();
 
         System.out.println(hammingDistance(10, 5));
+
+        System.out.println(plusOne1(5));
+
+        System.out.println(plusOne2(5));
+
+        // for (char i = 'A'; 'A' <= 'Z'; i++) {
+        // System.out.println(toLowerCase(i));
+        // }
+
+        for (char ch = 'A'; ch <= 'Z'; ch++) {
+            System.out.println(toLowerCase(ch));
+        }
+    }
+
+    public static char toLowerCase(char c) {
+        int bitMask = 32; // 1 << 5
+
+        // -A : 01000001
+        // 32 : 00100000
+        // -a : 01100001
+
+        return (char) (c | bitMask);
+
+    }
+
+    public static int plusOne2(int n) {
+        int m = 1;
+
+        while ((n & m) != 0) {
+            n = n ^ m;
+            m = m << 1;
+        }
+        n = n ^ m;
+        return n;
+    }
+
+    public static int plusOne1(int n) {
+        return -~n;
     }
 
     public static int hammingDistance(int x, int y) {
