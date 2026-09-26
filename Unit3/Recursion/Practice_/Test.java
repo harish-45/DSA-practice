@@ -1,4 +1,4 @@
-package Unit3.Recursion;
+package Unit3.Recursion.Practice_;
 
 public class Test {
     public static void main(String[] args) {
@@ -7,6 +7,15 @@ public class Test {
         removeDuplicates(str, 0, new boolean[26], new StringBuilder());
 
         System.out.println(getString(1234567890));
+
+        System.out.println(lenOfStr(str));
+    }
+
+    public static int lenOfStr(String str) {
+        if (str == "")
+            return 0;
+
+        return 1 + lenOfStr(str.substring(1));
     }
 
     public static String getString(int n) {
