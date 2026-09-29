@@ -7,6 +7,10 @@ import java.util.List;
 public class NQueens {
     public static void main(String[] args) {
         int n = 4;
+        nQueens(n);
+    }
+
+    public static void nQueens(int n) {
         char[][] board = new char[n][n];
 
         // initialize
@@ -27,7 +31,7 @@ public class NQueens {
         if (row == n) {
             List<String> list = makeList(board, ans);
             ans.add(list);
-            print2DArray(board);
+            // print2DArray(board);
             return;
         }
 
