@@ -101,13 +101,34 @@ public class BST {
         return root;
     }
 
+    public static void printInRange(Node root, int low, int high) {
+        if (root == null) {
+            return;
+        }
+        if (root.data <= high && root.data >= low) {
+            System.out.print(root.data + " ");
+            printInRange(root.left, low, high);
+            printInRange(root.right, low, high);
+        } else if (root.data > high) {
+            printInRange(root.left, low, high);
+        } else if (root.data < low) {
+            printInRange(root.right, low, high);
+        }
+    }
+
     public static void main(String[] args) {
-        int[] values = { 50, 30, 20, 40, 70, 60, 80, 25 };
-        Node root = buildTree(values);
-        inOrder(root);
+        int[] values1 = { 50, 30, 20, 40, 70, 60, 80, 25 };
+        Node root1 = buildTree(values1);
+        inOrder(root1);
         System.out.println();
 
-        deleteNode(root, 30);
-        inOrder(root);
+        deleteNode(root1, 30);
+        inOrder(root1);
+        System.out.println();
+
+        int[] values2 = { 10, 5, 15, 3, 7, 18 };
+        Node root2 = buildTree(values2);
+
+        printInRange(root2, 7, 15);
     }
 }
